@@ -216,4 +216,8 @@
     <string name="navigation_bar_category">Navigation bar</string>
     <string name="navigation_bar_layout_title">Layout</string>
     <string name="navigation_bar_layout_summary">Customize the layout of the navigation bar</string>
+
+    <!-- Pocket mode -->
+    <string name="proximity_wake_title">Prevent accidental wake-up</string>
+    <string name="proximity_wake_summary">Check the proximity sensor prior to waking up screen</string>
 </resources>
