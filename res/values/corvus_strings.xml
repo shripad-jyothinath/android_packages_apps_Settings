@@ -68,4 +68,9 @@
     <string name="build_date">Build date</string>
     <string name="about_device_name">Device</string>
 
+    <!-- Statusbar Tuner -->
+    <string name="statusbar_items_title">Statusbar items</string>
+
+    <!-- Display customization category -->
+    <string name="customization_category_title">Customization</string>
 </resources>
