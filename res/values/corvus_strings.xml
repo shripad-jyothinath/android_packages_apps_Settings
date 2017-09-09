@@ -116,4 +116,8 @@
     <string name="corvus_build_date">Build date:</string>
     <string name="build_type">Build type:</string>
     <string name="version">Version:</string>
+    
+    <!-- Double Tap Lockscreen to Sleep -->
+    <string name="double_tap_to_sleep_lockscreen_title">Tap to sleep</string>
+    <string name="double_tap_to_sleep_lockscreen_summary">Double tap on the top third or bottom shortcut area of the lock screen to put the device to sleep</string>
 </resources>
