@@ -87,4 +87,7 @@
     <!-- Notification sound/vibration -->
     <string name="notification_sound_vib_screen_on_title">Notifications behaviour</string>
     <string name="notification_sound_vib_screen_on_summary">Play sound and vibration for notifications when screen is on</string>
+
+    <!-- Title for connected TWS device group [CHAR LIMIT=none]-->
+    <string name="connected_tws_device_saved_title">Saved Earbuds</string>
 </resources>
