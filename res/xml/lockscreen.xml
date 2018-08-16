@@ -29,4 +29,10 @@
             android:summary="@string/double_tap_on_doze_to_wake_summary"
             android:defaultValue="true" />
 
+    <com.corvus.support.preferences.SystemSettingSwitchPreference
+            android:key="lockscreen_battery_info"
+            android:title="@string/lockscreen_battery_info_title"
+            android:summary="@string/lockscreen_battery_info_summary"
+            android:defaultValue="true" />
+
 </PreferenceScreen>
