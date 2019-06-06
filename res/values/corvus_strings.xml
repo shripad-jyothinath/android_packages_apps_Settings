@@ -220,4 +220,8 @@
     <!-- Pocket mode -->
     <string name="proximity_wake_title">Prevent accidental wake-up</string>
     <string name="proximity_wake_summary">Check the proximity sensor prior to waking up screen</string>
+
+    <!-- Charging animation -->
+    <string name="charging_animation_title">Charging animation</string>
+    <string name="charging_animation_summary">Display an animation when the device is plugged in</string>
 </resources>
