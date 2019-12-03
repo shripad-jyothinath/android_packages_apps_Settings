@@ -83,4 +83,8 @@
     <!-- Android debugging as root -->
     <string name="adb_enable_root">Rooted debugging</string>
     <string name="adb_enable_summary_root">Allow running Android debugging as root</string>
+    
+    <!-- Notification sound/vibration -->
+    <string name="notification_sound_vib_screen_on_title">Notifications behaviour</string>
+    <string name="notification_sound_vib_screen_on_summary">Play sound and vibration for notifications when screen is on</string>
 </resources>
