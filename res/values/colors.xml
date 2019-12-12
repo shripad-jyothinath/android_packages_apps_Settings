@@ -221,4 +221,8 @@
     <color name="corvus_official_color">#1aa260</color>
     <color name="corvus_unofficial_color">#DB4437</color>
     <color name="corvus_version_cardbg">@android:color/system_accent2_200</color>
+
+    <!-- Ambient lights-->
+    <color name="ambient_light_screen_color">#111111</color>
+    <color name="ambient_light_body_color">#323232</color>
 </resources>
