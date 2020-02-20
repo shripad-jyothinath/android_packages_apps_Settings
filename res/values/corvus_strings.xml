@@ -214,4 +214,6 @@
 
     <!-- Navigation bar -->
     <string name="navigation_bar_category">Navigation bar</string>
+    <string name="navigation_bar_layout_title">Layout</string>
+    <string name="navigation_bar_layout_summary">Customize the layout of the navigation bar</string>
 </resources>
