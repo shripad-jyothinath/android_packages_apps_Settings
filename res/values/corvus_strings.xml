@@ -46,6 +46,9 @@
 
     <!-- Density category -->
     <string name="density_category">Density options</string>
+
+    <!-- Refresh rate -->
+    <string name="refresh_rate_title">Screen refresh rate</string>
     
     <!-- Three-fingers-swipe to screenshot -->
     <string name="three_finger_gesture">Swipe to screenshot</string>
