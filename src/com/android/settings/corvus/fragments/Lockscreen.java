@@ -24,8 +24,10 @@ import android.graphics.Color;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.SwitchPreference;
+import androidx.preference.PreferenceCategory;
 
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.util.corvus.CorvusUtils;
 import com.android.settings.R;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.SettingsPreferenceFragment;
@@ -43,6 +45,13 @@ public class Lockscreen extends SettingsPreferenceFragment
         addPreferencesFromResource(R.xml.lockscreen);
 
         final PreferenceScreen screen = getPreferenceScreen();
+
+        boolean udfpsResPkgInstalled = CorvusUtils.isPackageInstalled(getContext(),
+                "com.corvus.udfps.resources");
+        PreferenceCategory udfps = (PreferenceCategory) screen.findPreference("udfps_category");
+        if (!udfpsResPkgInstalled) {
+            screen.removePreference(udfps);
+        }
     }
 
     @Override

@@ -56,5 +56,7 @@
 
     <!-- Corvus bottom sheet colors -->
     <color name="corvus_version_cardbg">@android:color/system_accent2_600</color>
+
+    <color name="option_border_default">#ffffff</color>
 </resources>
 
