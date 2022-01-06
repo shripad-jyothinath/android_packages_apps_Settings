@@ -17,9 +17,16 @@
     android:title="@string/raven_battery_title">
 
     <com.corvus.support.preferences.SystemSettingSwitchPreference
-            android:key="charging_animation"
-            android:title="@string/charging_animation_title"
-            android:summary="@string/charging_animation_summary"
-            android:defaultValue="false" />
+          android:key="charging_animation"
+          android:title="@string/charging_animation_title"
+          android:summary="@string/charging_animation_summary"
+          android:defaultValue="false" />
+
+    <com.corvus.support.preferences.SystemSettingSwitchPreference
+          android:key="qs_show_battery_estimate"
+          android:title="@string/qs_show_battery_estimate_title"
+          android:summaryOn="@string/qs_show_battery_estimate_summary_on"
+          android:summaryOff="@string/qs_show_battery_estimate_summary_off"
+          android:defaultValue="true" />
 
 </PreferenceScreen>

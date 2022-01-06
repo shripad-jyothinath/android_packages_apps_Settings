@@ -224,4 +224,9 @@
     <!-- Charging animation -->
     <string name="charging_animation_title">Charging animation</string>
     <string name="charging_animation_summary">Display an animation when the device is plugged in</string>
+
+     <!-- QS Battery estimates -->
+    <string name="qs_show_battery_estimate_title">Battery estimates</string>
+    <string name="qs_show_battery_estimate_summary_on">Show battery estimates in QS</string>
+    <string name="qs_show_battery_estimate_summary_off">Hide battery estimates in QS</string>
 </resources>
