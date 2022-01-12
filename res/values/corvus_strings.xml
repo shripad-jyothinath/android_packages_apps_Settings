@@ -736,4 +736,8 @@
     <string name="qs_styles_title">QS Panel Styles</string>
     <string name="qs_rounded_rectangle">QS Rounded Rectangle</string>
     <string name="qs_outline">QS Outline Style</string>
+
+    <!-- Black theme -->
+    <string name="system_black_theme_title">Use black theme</string>
+    <string name="system_black_theme_summary">Force black background colors</string>
 </resources>
