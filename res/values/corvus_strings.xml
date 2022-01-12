@@ -524,4 +524,8 @@
     <string name="vibration_intensity_low">Low</string>
     <string name="vibration_intensity_medium">Medium</string>
     <string name="vibration_intensity_high">High</string>
+
+    <!-- Black theme -->
+    <string name="system_black_theme_title">Use black theme</string>
+    <string name="system_black_theme_summary">Force black background colors</string>
 </resources>
