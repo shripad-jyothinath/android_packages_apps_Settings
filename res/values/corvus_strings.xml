@@ -94,4 +94,8 @@
     <!-- Battery stats reset -->
     <string name="battery_stats_reset">Reset stats</string>
     <string name="battery_stats_message">Battery history stats are going to be reset</string>
+    
+    <!-- Theme fragment -->
+    <string name="raven_themes_title">Theming</string>
+    <string name="raven_themes_summary">Monet,Custom Accent,Fonts,Icons</string>
 </resources>
