@@ -62,6 +62,19 @@
             android:summary="@string/data_disabled_icon_summary"
             android:defaultValue="true"/>
 
+      <com.corvus.support.preferences.SecureSettingSwitchPreference
+            android:key="enable_camera_privacy_indicator"
+            android:icon="@drawable/ic_camera"
+            android:title="@string/mic_camera_privacy_indicator_title"
+            android:summary="@string/mic_camera_privacy_indicator_summary"
+            android:defaultValue="true" />
+
+      <com.corvus.support.preferences.SecureSettingSwitchPreference
+            android:key="enable_location_privacy_indicator"
+            android:title="@string/location_privacy_title"
+            android:summary="@string/location_privacy_summary"
+            android:defaultValue="true" />
+
       <Preference
         android:key="traffic"
         android:fragment="com.android.settings.corvus.fragments.Traffic"

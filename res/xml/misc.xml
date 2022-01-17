@@ -28,11 +28,5 @@
         android:key="use_games_spoof"
         android:title="@string/use_games_spoof_title"
         android:summary="@string/use_games_spoof_summary" />
-
-    <com.corvus.support.preferences.SecureSettingSwitchPreference
-        android:key="enable_location_privacy_indicator"
-        android:title="@string/location_privacy_title"
-        android:summary="@string/location_privacy_summary"
-        android:defaultValue="true" />
     
 </PreferenceScreen>
