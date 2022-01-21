@@ -107,4 +107,13 @@
     <string name="monet_engine_accurate_shades_title">Use accurate shades</string>
     <string name="monet_engine_chroma_factor_title">Chroma factor</string>
     <string name="monet_engine_linear_lightness_title">Use linear lightness</string>
+
+    <!-- Bottom sheet strings -->
+    <string name="open_ravendesk">Open Ravendesk</string>
+    <string name="bottomsheet_title">Corvus Version</string>
+    <string name="device">Device:</string>
+    <string name="maintainer">Maintainer:</string>
+    <string name="corvus_build_date">Build date:</string>
+    <string name="build_type">Build type:</string>
+    <string name="version">Version:</string>
 </resources>
