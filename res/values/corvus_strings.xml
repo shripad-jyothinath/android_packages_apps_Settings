@@ -171,4 +171,7 @@
 
     <!-- AdGuard DNS Option -->
     <string name="private_dns_mode_adguard" translatable="false">AdGuard DNS</string>
+
+    <!-- Lockscreen fragment -->
+    <string name="lockscreen_tuner_title">Lockscreen Shortcuts</string>
 </resources>
