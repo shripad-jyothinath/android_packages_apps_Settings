@@ -16,5 +16,11 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/raven_misc_title">
 
-
+    <!-- Unlimited google photos storage -->
+    <SwitchPreference
+        android:key="use_photos_spoof"
+        android:title="@string/use_photos_spoof_title"
+        android:summary="@string/use_photos_spoof_summary"
+        android:defaultValue="true" />
+    
 </PreferenceScreen>

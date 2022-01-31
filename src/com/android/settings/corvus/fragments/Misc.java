@@ -18,6 +18,7 @@ package com.android.settings.corvus.fragments;
 
 import android.content.ContentResolver;
 import android.os.Bundle;
+import android.os.SystemProperties;
 import android.provider.Settings;
 import android.graphics.Color;
 
@@ -35,6 +36,11 @@ import com.android.settingslib.search.SearchIndexable;
 public class Misc extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
+    private static final String KEY_PHOTOS_SPOOF = "use_photos_spoof";
+    private static final String SYS_PHOTOS_SPOOF = "persist.sys.pixelprops.gphotos";
+
+    private SwitchPreference mPhotosSpoof;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,10 +49,19 @@ public class Misc extends SettingsPreferenceFragment
         addPreferencesFromResource(R.xml.misc);
 
         final PreferenceScreen screen = getPreferenceScreen();
+
+        mPhotosSpoof = (SwitchPreference) screen.findPreference(KEY_PHOTOS_SPOOF);
+        mPhotosSpoof.setChecked(SystemProperties.getBoolean(SYS_PHOTOS_SPOOF, true));
+        mPhotosSpoof.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mPhotosSpoof) {
+            boolean value = (Boolean) newValue;
+            SystemProperties.set(SYS_PHOTOS_SPOOF, value ? "true" : "false");
+            return true;
+        }
         return false;
     }
 
