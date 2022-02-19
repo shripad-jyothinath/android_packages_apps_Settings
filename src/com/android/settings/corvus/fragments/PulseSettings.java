@@ -37,7 +37,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
-import net.margaritov.preference.colorpicker.ColorPickerPreference;
+import com.corvus.support.colorpicker.ColorPickerPreference;
 
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
 public class PulseSettings extends SettingsPreferenceFragment implements
