@@ -43,6 +43,7 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Button;
 import android.widget.Toolbar;
 import android.graphics.drawable.Drawable;
 
@@ -112,6 +113,7 @@ public class SettingsHomepageActivity extends FragmentActivity implements
             R.drawable.tab_ic_corvus
     };
 
+    Button btnRavenDesk;
     ImageView avatarView, btnCorvusVersion, logoView;
     TextView crvsVersion, crvsMaintainer, crvsDevice, crvsBuildDate, crvsBuildType;
 
@@ -303,7 +305,26 @@ public class SettingsHomepageActivity extends FragmentActivity implements
         crvsVersion.setSelected(true);
         crvsMaintainer.setText(SystemProperties.get("ro.corvus.maintainer"));
         crvsBuildDate.setText(buildDate);
-        crvsBuildType.setText(SystemProperties.get("ro.corvus.build.type"));
+        String buildType = SystemProperties.get("ro.corvus.build.type");
+        crvsBuildType.setText(buildType);
+
+        // Initialise intent for Ravendesk
+        btnRavenDesk = bottomSheetDialog.findViewById(R.id.btn_ravendesk);
+
+        if(buildType.equals("Official")){
+          btnRavenDesk.setVisibility(View.VISIBLE);
+        }
+
+        assert btnRavenDesk != null;
+        btnRavenDesk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent nIntent = new Intent(Intent.ACTION_MAIN);
+                nIntent.setClassName("com.corvus.ravendesk",
+                        "com.corvus.ravendesk.MainActivity");
+                startActivity(nIntent);
+            }
+        });
 
         bottomSheetDialog.show();
     }
