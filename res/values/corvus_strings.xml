@@ -656,4 +656,8 @@
     <string name="visualizer_center_mirrored_summary">Set the visualizer in center mirrored mode</string>
     <string name="pulse_vertical_mirror_title">Vertical Mirror</string>
     <string name="pulse_vertical_mirror_summary">Create other pulse and flip vertically</string>
+
+    <!-- Doze on charge -->
+    <string name="doze_on_charge_title">Always on when charging</string>
+    <string name="doze_on_charge_summary">Show doze screen all the time when charging</string>
 </resources>
