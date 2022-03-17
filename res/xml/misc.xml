@@ -29,4 +29,9 @@
         android:title="@string/use_games_spoof_title"
         android:summary="@string/use_games_spoof_summary" />
     
+    <com.corvus.support.preferences.GlobalSettingSwitchPreference
+        android:key="pm_downgrade_allowed"
+        android:title="@string/laboratory_app_downgrade_title"
+        android:summary="@string/laboratory_app_downgrade_summary"
+        android:defaultValue="false"/>
 </PreferenceScreen>

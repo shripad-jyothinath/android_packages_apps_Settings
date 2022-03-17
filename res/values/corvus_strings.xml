@@ -815,4 +815,8 @@
     <string name="lockscreen_albumart_filter_blur">Blur</string>
     <string name="lockscreen_albumart_filter_grayblur">Grayscale and blurred</string>
     <string name="lockscreen_media_blur_title">Media art blur level</string>
+
+    <!-- Application downgrade -->
+    <string name="laboratory_app_downgrade_title">Allow application downgrade</string>
+    <string name="laboratory_app_downgrade_summary">This allows you to downgrade applications. Note that this may lead to crashes and data corruption.</string>
 </resources>
