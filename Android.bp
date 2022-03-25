@@ -75,6 +75,7 @@ android_library {
         "lottie",
         "windowExtLib",
         "VendorSupport-preference",
+        "powerusagefeaturegoogle",
     ],
 
     libs: [
@@ -121,6 +122,12 @@ android_library_import {
 android_library_import {
     name: "windowExtLib",
     aars: ["libs/window_ext_lib.aar"],
+}
+
+java_import {
+    name: "powerusagefeaturegoogle",
+    jars: ["libs/powerusagefeaturegoogle.jar"],
+    sdk_version: "current",
 }
 
 filegroup {

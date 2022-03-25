@@ -1619,4 +1619,8 @@
         <item>2</item>
         <item>4</item>
     </string-array>
+
+    <string-array name="allowlist_hide_background_in_battery_usage" translatable="false">
+        <item>com.google.android.GoogleCamera</item>
+    </string-array>
 </resources>
