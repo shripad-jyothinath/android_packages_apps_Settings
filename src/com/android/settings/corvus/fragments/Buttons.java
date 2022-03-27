@@ -31,14 +31,17 @@ import com.android.settings.R;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settingslib.search.SearchIndexable;
+import com.android.internal.util.corvus.CorvusUtils;
 
 @SearchIndexable
 public class Buttons extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
     private static final String TORCH_POWER_BUTTON_GESTURE = "torch_power_button_gesture";
+    private static final String KEY_LAYOUT_SETTINGS = "layout_settings";
 
     private ListPreference mTorchPowerButton;
+    private Preference mLayoutSettings;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -54,6 +57,9 @@ public class Buttons extends SettingsPreferenceFragment
         mTorchPowerButton.setValue(Integer.toString(mTorchPowerButtonValue));
         mTorchPowerButton.setSummary(mTorchPowerButton.getEntry());
         mTorchPowerButton.setOnPreferenceChangeListener(this);
+
+        mLayoutSettings = (Preference) findPreference(KEY_LAYOUT_SETTINGS);
+        mLayoutSettings.setEnabled(!CorvusUtils.isOverlayEnabled("com.android.internal.systemui.navbar.gestural"));
     }
 
     @Override
