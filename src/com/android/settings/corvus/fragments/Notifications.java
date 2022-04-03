@@ -31,9 +31,16 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.corvus.support.preferences.SystemSettingSwitchPreference;
+import com.corvus.support.preferences.SystemSettingMasterSwitchPreference;
+
 @SearchIndexable
 public class Notifications extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
+
+    private static final String KEY_EDGE_LIGHTING = "pulse_ambient_light";
+
+    private SystemSettingMasterSwitchPreference mEdgeLighting;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -43,10 +50,24 @@ public class Notifications extends SettingsPreferenceFragment
         addPreferencesFromResource(R.xml.notifications);
 
         final PreferenceScreen screen = getPreferenceScreen();
+
+        mEdgeLighting = (SystemSettingMasterSwitchPreference)
+                findPreference(KEY_EDGE_LIGHTING);
+        boolean enabled = Settings.System.getIntForUser(resolver,
+                KEY_EDGE_LIGHTING, 0, UserHandle.USER_CURRENT) == 1;
+        mEdgeLighting.setChecked(enabled);
+        mEdgeLighting.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mEdgeLighting) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putIntForUser(resolver, KEY_EDGE_LIGHTING,
+                    value ? 1 : 0, UserHandle.USER_CURRENT);
+            return true;
+        }
         return false;
     }
 
