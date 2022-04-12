@@ -4324,6 +4324,19 @@
             </intent-filter>
         </activity>
 
+        <!-- App lock -->
+        <activity android:name="com.android.settings.corvus.fragments.AppLockCredentialActivity"
+            android:exported="false"
+            android:permission="android.permission.MANAGE_USERS"
+            android:excludeFromRecents="true"
+            android:stateNotNeeded="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.app.action.UNLOCK_APP" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
         <!-- Custom Backup Transport -->
         <activity android:name=".backup.transport.TransportActivity"
                   android:label="@string/backup_transport_title"
