@@ -398,6 +398,8 @@
     <string name="volume_link_notification_title">Link ring &amp; notification volumes</string>
 
     <!-- Face Unlock -->
+    <string name="search">Search</string>
+    <string name="search_apps">Search apps</string>
     <string name="security_settings_face_unlock_redo_face_scan_summary">Remove existing face scan and create a new scan</string>
     <string name="security_settings_face_unlock_redo_face_scan_title">Redo face scan</string>
     <string name="face_redo_confirm_btn">Redo</string>
