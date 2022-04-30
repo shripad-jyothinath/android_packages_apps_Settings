@@ -556,4 +556,8 @@
     <!-- Statusbar categories -->
     <string name="network_icons_category_title">Network icons</string>
     <string name="privacy_indicators_category_title">Privacy indicators</string>
+
+    <!-- Qs Transparency -->
+    <string name="qs_transparency_summary">Choose how transparent you want your qs to be</string>
+    <string name="qs_transparency_title">QS Transparency</string>
 </resources>
