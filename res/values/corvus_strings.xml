@@ -123,11 +123,9 @@
     <!-- Bottom sheet strings -->
     <string name="open_ravendesk">Open Ravendesk</string>
     <string name="bottomsheet_title">Corvus Version</string>
-    <string name="device">Device:</string>
-    <string name="maintainer">Maintainer:</string>
-    <string name="corvus_build_date">Build date:</string>
-    <string name="build_type">Build type:</string>
-    <string name="version">Version:</string>
+    <string name="maintainer">Maintainer</string>
+    <string name="corvus_build_date">Build date</string>
+    <string name="build_type">Build type</string>
     
     <!-- Double Tap Lockscreen to Sleep -->
     <string name="double_tap_to_sleep_lockscreen_title">Tap to sleep</string>
