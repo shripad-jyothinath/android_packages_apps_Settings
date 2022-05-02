@@ -40,7 +40,7 @@
         <com.corvus.support.preferences.SecureSettingSwitchPreference
             android:key="monet_engine_accurate_shades"
             android:title="@string/monet_engine_accurate_shades_title"
-            android:defaultValue="true" />
+            android:defaultValue="false" />
 
         <com.corvus.support.preferences.SecureSettingSeekBarPreference
             android:key="monet_engine_white_luminance_user"
