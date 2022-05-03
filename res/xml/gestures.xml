@@ -98,7 +98,7 @@
         android:summary="@string/global_actions_advanced_reboot_summary"
         android:defaultValue="false" />
         
-    <com.android.settings.custom.preference.RemotePreference
+    <com.corvus.support.preferences.RemotePreference
             android:key="touchscreen_gesture_settings"
             android:title="@string/touchscreen_gesture_settings_title"
             android:summary="@string/touchscreen_gesture_settings_summary"
@@ -107,14 +107,14 @@
             android:action="android.intent.action.MAIN"
             android:targetPackage="com.android.touch.gestures"
             android:targetClass="com.android.touch.gestures.TouchscreenGestureSettings" />
-    </com.android.settings.custom.preference.RemotePreference>
+    </com.corvus.support.preferences.RemotePreference>
 
-    <com.android.settings.custom.preference.RemotePreference
+    <com.corvus.support.preferences.RemotePreference
             android:key="device_touchscreen_gesture_settings"
             android:title="@string/touchscreen_gesture_settings_title"
             android:summary="@string/touchscreen_gesture_settings_summary"
             settings:replacesKey="touchscreen_gesture_settings"
             settings:requiresAction="org.lineageos.settings.device.GESTURE_SETTINGS">
         <intent android:action="org.lineageos.settings.device.GESTURE_SETTINGS" />
-    </com.android.settings.custom.preference.RemotePreference>
+    </com.corvus.support.preferences.RemotePreference>
 </PreferenceScreen>
