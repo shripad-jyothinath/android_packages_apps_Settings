@@ -24,6 +24,21 @@
                 android:targetClass="com.android.systemui.tuner.StatusbarItemsActivity" />
      </Preference>
 
+     <Preference
+        android:key="traffic"
+        android:fragment="com.android.settings.corvus.fragments.Traffic"
+        android:title="@string/traffic_title" />
+
+      <Preference
+        android:key="status_bar_clock"
+        android:summary="@string/status_bar_clock_summary"
+        android:title="@string/status_bar_clock_title"
+        android:fragment="com.android.settings.corvus.fragments.ClockDateSettings"/>
+
+     <PreferenceCategory
+        android:key="network_icons_category"
+        android:title="@string/network_icons_category_title" >
+
      <com.corvus.support.preferences.SystemSettingListPreference
        android:key="show_vowifi_icon"
        android:title="@string/vowifi_icon_title"
@@ -62,6 +77,12 @@
             android:summary="@string/data_disabled_icon_summary"
             android:defaultValue="true"/>
 
+      </PreferenceCategory>
+
+      <PreferenceCategory
+        android:key="privacy_indicators_category"
+        android:title="@string/privacy_indicators_category_title" >
+
       <com.corvus.support.preferences.SecureSettingSwitchPreference
             android:key="enable_camera_privacy_indicator"
             android:icon="@drawable/ic_camera"
@@ -74,22 +95,13 @@
             android:title="@string/location_privacy_title"
             android:summary="@string/location_privacy_summary"
             android:defaultValue="true" />
-
-      <Preference
-        android:key="traffic"
-        android:fragment="com.android.settings.corvus.fragments.Traffic"
-        android:title="@string/traffic_title" />
+      
+      </PreferenceCategory>
 
      <com.corvus.support.preferences.SystemSettingSwitchPreference
         android:key="double_tap_sleep_gesture"
         android:title="@string/double_tap_to_sleep_title"
         android:summary="@string/double_tap_to_sleep_summary"
         android:defaultValue="false" />
-
-     <Preference
-        android:key="status_bar_clock"
-        android:summary="@string/status_bar_clock_summary"
-        android:title="@string/status_bar_clock_title"
-        android:fragment="com.android.settings.corvus.fragments.ClockDateSettings"/>
      
 </PreferenceScreen>

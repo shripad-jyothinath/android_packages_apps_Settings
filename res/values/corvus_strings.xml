@@ -552,4 +552,8 @@
     <!-- Show VoLTE switch -->
     <string name="show_volte_title">VoLTE icon</string>
     <string name="show_volte_summary">Display VoLTE icon</string>
+
+    <!-- Statusbar categories -->
+    <string name="network_icons_category_title">Network icons</string>
+    <string name="privacy_indicators_category_title">Privacy indicators</string>
 </resources>
