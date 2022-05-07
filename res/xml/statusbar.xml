@@ -85,7 +85,6 @@
 
       <com.corvus.support.preferences.SecureSettingSwitchPreference
             android:key="enable_camera_privacy_indicator"
-            android:icon="@drawable/ic_camera"
             android:title="@string/mic_camera_privacy_indicator_title"
             android:summary="@string/mic_camera_privacy_indicator_summary"
             android:defaultValue="true" />
