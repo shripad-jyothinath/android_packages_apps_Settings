@@ -31,6 +31,7 @@
         android:layout_weight="1"
         android:layout_gravity="center_vertical"
         android:textSize="26sp"
+        android:fontFamily="@*android:string/config_bodyFontFamilyMedium"
         android:text="@string/settings_label"
         />
 
