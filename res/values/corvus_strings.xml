@@ -567,4 +567,11 @@
     <string name="reticker_summary">Replace your notifications with a redesigned version of tickers. \nSlim and less invasive than a standard notification</string>
     <string name="reticker_colored_title">Use app colored background</string>
     <string name="reticker_colored_summary">Replace reTicker background color using notification app main color</string>
+
+    <!-- Statusbar icons -->
+    <string name="statusbar_icons_category_title">Statusbar icons</string>
+    <string name="statusbar_colored_icons_title">Colored icons</string>
+    <string name="statusbar_colored_icons_summary">Use proper app icons for notification icons in statusbar</string>
+    <string name="statusbar_notif_count_title">Show notification count</string>
+    <string name="statusbar_notif_count_summary">Display the number of pending notifications</string>
 </resources>

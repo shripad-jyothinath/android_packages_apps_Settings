@@ -17,14 +17,6 @@
     android:title="@string/raven_statusbar_title">
 
      <Preference
-            android:key="systemui_tuner_statusbar"
-            android:title="@string/statusbar_items_title" >
-            <intent android:action="android.intent.action.MAIN"
-                android:targetPackage="com.android.systemui"
-                android:targetClass="com.android.systemui.tuner.StatusbarItemsActivity" />
-     </Preference>
-
-     <Preference
         android:key="traffic"
         android:fragment="com.android.settings.corvus.fragments.Traffic"
         android:title="@string/traffic_title" />
@@ -34,6 +26,32 @@
         android:summary="@string/status_bar_clock_summary"
         android:title="@string/status_bar_clock_title"
         android:fragment="com.android.settings.corvus.fragments.ClockDateSettings"/>
+
+      <PreferenceCategory
+        android:key="statusbar_icons_category"
+        android:title="@string/statusbar_icons_category_title" >
+
+            <Preference
+                  android:key="systemui_tuner_statusbar"
+                  android:title="@string/statusbar_items_title" >
+                  <intent android:action="android.intent.action.MAIN"
+                  android:targetPackage="com.android.systemui"
+                  android:targetClass="com.android.systemui.tuner.StatusbarItemsActivity" />
+            </Preference>
+
+            <com.corvus.support.preferences.SystemSettingSwitchPreference
+                  android:key="statusbar_notif_count"
+                  android:title="@string/statusbar_notif_count_title"
+                  android:summary="@string/statusbar_notif_count_summary"
+                  android:defaultValue="false" />
+
+            <com.corvus.support.preferences.SystemSettingSwitchPreference
+                  android:key="statusbar_colored_icons"
+                  android:title="@string/statusbar_colored_icons_title"
+                  android:summary="@string/statusbar_colored_icons_summary"
+                  android:defaultValue="false" />
+
+      </PreferenceCategory>
 
      <PreferenceCategory
         android:key="network_icons_category"
