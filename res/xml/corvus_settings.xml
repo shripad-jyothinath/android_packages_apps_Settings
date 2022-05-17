@@ -19,16 +19,11 @@
 
     <!-- Gaming mode -->
     <Preference
-        android:key="gaming_mode"
-        android:title="@string/gaming_mode_title"
+        android:key="game_settings"
+        android:title="@string/game_space_title"
         android:icon="@drawable/ic_raven_gaming"
-        android:summary="@string/gaming_mode_summary">
-
-        <intent
-            android:action="android.intent.action.MAIN"
-            android:targetPackage="org.exthmui.game"
-            android:targetClass="org.exthmui.game.ui.MainActivity" />
-    </Preference>
+        android:summary="@string/game_space_summary"
+        settings:controller="com.android.settings.applications.GameSettingsPreferenceController" />
 
     <Preference
         android:fragment="com.android.settings.corvus.fragments.Theming"
