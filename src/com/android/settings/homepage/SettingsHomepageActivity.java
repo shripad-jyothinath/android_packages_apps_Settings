@@ -112,10 +112,6 @@ public class SettingsHomepageActivity extends FragmentActivity implements
 
     private TabLayout mTabLayout;
     private ViewPager mViewPager;
-    private int[] tabIcons = {
-            R.drawable.tab_ic_device,
-            R.drawable.tab_ic_corvus
-    };
 
     LinearLayout linearLayout, topContent;
     Button btnRavenDesk;
@@ -189,7 +185,6 @@ public class SettingsHomepageActivity extends FragmentActivity implements
         final View appBar = findViewById(R.id.app_bar_container);
         appBar.setMinimumHeight(getSearchBoxHeight());
         initHomepageContainer();
-        setupTabIcons();
         updateHomepageAppBar();
         updateHomepageBackground();
         mLoadedListeners = new ArraySet<>();
@@ -538,11 +533,6 @@ public class SettingsHomepageActivity extends FragmentActivity implements
     //             getHighlightMenuKey());
     //     mMainFragment.reloadHighlightMenuKey();
     // }
-
-    private void setupTabIcons() {
-        mTabLayout.getTabAt(0).setIcon(tabIcons[0]);
-        mTabLayout.getTabAt(1).setIcon(tabIcons[1]);
-    }
 
     private void initHomepageContainer() {
         mTabLayout = findViewById(R.id.tab_layout);
