@@ -75,7 +75,7 @@
         android:entryValues="@array/ambient_notification_color_mode_values"
         android:defaultValue="0" />
 
-    <net.margaritov.preference.colorpicker.ColorPickerPreference
+    <com.corvus.support.colorpicker.ColorPickerPreference
         android:key="ambient_notification_light_color"
         android:title="@string/ambient_notification_light_color_title" />
 
@@ -108,8 +108,7 @@
         android:title="@string/pulse_ambient_light_width_title"
         android:max="150"
         android:min="1"
-        settings:unitsLeft=""
-        settings:unitsRight="px"
+        settings:units="px"
         android:defaultValue="125" />
 
 </PreferenceScreen>

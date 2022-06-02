@@ -38,7 +38,7 @@ import com.corvus.support.preferences.CustomSeekBarPreference;
 import com.corvus.support.preferences.SystemSettingListPreference;
 import com.corvus.support.preferences.SystemSettingSwitchPreference;
 
-import net.margaritov.preference.colorpicker.ColorPickerPreference;
+import com.corvus.support.colorpicker.ColorPickerPreference;
 import com.android.settings.corvus.preferences.AmbientLightSettingsPreview;
 
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
