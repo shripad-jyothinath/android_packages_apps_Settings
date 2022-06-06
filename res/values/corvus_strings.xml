@@ -831,4 +831,13 @@
     <!-- Force background freezer -->
     <string name="laboratory_force_background_freezer_title">Background tasks freezer</string>
     <string name="laboratory_force_background_freezer_summary">Freeze tasks with restricted battery usage when moving them to background and unfreeze them when moving to foreground. This could save battery slightly but may lead to crashes and background ANR.</string>
+
+    <!-- QS columns/tile customizations -->
+    <string name="qs_columns_category">QS tiles settings</string>
+    <string name="qs_columns_portrait_title">QS columns in portrait</string>
+    <string name="qs_columns_landscape_title">QS columns in landscape</string>
+    <string name="qs_tile_vertical_layout_title">QS vertical layout</string>
+    <string name="qs_tile_vertical_layout_summary">Enable tile vertical layout</string>
+    <string name="qs_tile_title_visibility_title">Hide titles</string>
+    <string name="qs_tile_title_visibility_summary">Enable to hide QS tile titles</string>
 </resources>
