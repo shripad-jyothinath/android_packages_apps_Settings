@@ -28,16 +28,23 @@
         android:key="use_games_spoof"
         android:title="@string/use_games_spoof_title"
         android:summary="@string/use_games_spoof_summary" />
-    
-    <com.corvus.support.preferences.GlobalSettingSwitchPreference
-        android:key="pm_downgrade_allowed"
-        android:title="@string/laboratory_app_downgrade_title"
-        android:summary="@string/laboratory_app_downgrade_summary"
-        android:defaultValue="false"/>
 
     <com.corvus.support.preferences.SecureSettingSwitchPreference
         android:key="window_ignore_secure"
         android:title="@string/laboratory_ignore_window_secure_title"
         android:summary="@string/laboratory_ignore_window_secure_summary"
         android:defaultValue="false"/>
+
+    <com.corvus.support.preferences.GlobalSettingSwitchPreference
+        android:key="pm_downgrade_allowed"
+        android:title="@string/laboratory_app_downgrade_title"
+        android:summary="@string/laboratory_app_downgrade_summary"
+        android:defaultValue="false"/>
+
+    <com.corvus.support.preferences.GlobalSettingSwitchPreference
+        android:key="strict_standby_policy"
+        android:title="@string/laboratory_strict_standby_policy_title"
+        android:summary="@string/laboratory_strict_standby_policy_summary"
+        android:defaultValue="false"/>
+
 </PreferenceScreen>
