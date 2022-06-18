@@ -51,6 +51,8 @@ import com.android.settings.Utils;
 
 import com.android.settingslib.search.Indexable;
 
+import com.corvus.support.preferences.CustomSeekBarPreference;
+
 import com.android.internal.util.corvus.CorvusUtils;
 
 import java.util.ArrayList;
@@ -71,6 +73,8 @@ public class ClockDateSettings extends SettingsPreferenceFragment
     private static final String PREF_CLOCK_SECONDS = "statusbar_clock_seconds";
     private static final String PREF_CLOCK_STYLE = "statusbar_clock_style";
     private static final String PREF_CLOCK_BG = "statusbar_clock_chip";
+    private static final String STATUS_BAR_CLOCK_SIZE  = "status_bar_clock_size";
+    private static final String QS_HEADER_CLOCK_SIZE = "qs_header_clock_size";
 
     public static final int CLOCK_DATE_STYLE_LOWERCASE = 1;
     public static final int CLOCK_DATE_STYLE_UPPERCASE = 2;
@@ -85,6 +89,8 @@ public class ClockDateSettings extends SettingsPreferenceFragment
     private SwitchPreference mStatusBarClock;
     private SwitchPreference mStatusBarSecondsShow;
     private SwitchPreference mStatusBarClockBG;
+    private CustomSeekBarPreference mClockSize;
+    private CustomSeekBarPreference mQsClockSize;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -172,6 +178,18 @@ public class ClockDateSettings extends SettingsPreferenceFragment
         mStatusBarClockBG.setChecked((Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.STATUSBAR_CLOCK_CHIP, 1) == 1));
         mStatusBarClockBG.setOnPreferenceChangeListener(this);
+
+        mClockSize = (CustomSeekBarPreference) findPreference(STATUS_BAR_CLOCK_SIZE);
+        int clockSize = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.STATUS_BAR_CLOCK_SIZE, 14);
+        mClockSize.setValue(clockSize / 1);
+        mClockSize.setOnPreferenceChangeListener(this);
+
+        mQsClockSize = (CustomSeekBarPreference) findPreference(QS_HEADER_CLOCK_SIZE);
+        int qsClockSize = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.QS_HEADER_CLOCK_SIZE, 14);
+        mQsClockSize.setValue(qsClockSize / 1);
+        mQsClockSize.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -305,6 +323,16 @@ public class ClockDateSettings extends SettingsPreferenceFragment
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_CLOCK_CHIP, value ? 1 : 0);
+            return true;
+        } else if (preference == mQsClockSize) {
+            int width = ((Integer)newValue).intValue();
+            Settings.System.putInt(getActivity().getContentResolver(),  
+                    Settings.System.QS_HEADER_CLOCK_SIZE, width);
+            return true;
+        } else if (preference == mClockSize) {
+            int width = ((Integer)newValue).intValue();
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUS_BAR_CLOCK_SIZE, width);
             return true;
         }
         return false;
