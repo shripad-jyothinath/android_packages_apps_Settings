@@ -729,4 +729,10 @@
     <string name="data_usage_app_restrict_vpn_summary">Enable usage of VPN data</string>
     <string name="data_usage_app_restrict_wifi">Wi\u2011Fi data</string>
     <string name="data_usage_app_restrict_wifi_summary">Enable usage of Wi\u2011Fi data</string>
+
+    <!-- Quick settings styling -->
+    <string name="qs_brightness_slider_category">Quick Settings Brightness</string>
+    <string name="qs_styling">Quick Settings Styling</string>
+    <string name="qs_styles_title">QS Panel Styles</string>
+    <string name="qs_rounded_rectangle">QS Rounded Rectangle</string>
 </resources>

@@ -16,6 +16,10 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/raven_quicksettings_title">
 
+        <PreferenceCategory
+            android:key="quick_settings_brighness_category"
+            android:title="@string/qs_brightness_slider_category">
+
         <!-- Brightness slider -->
         <com.corvus.support.preferences.SecureSettingListPreference
             android:key="qs_show_brightness_slider"
@@ -37,6 +41,12 @@
             android:summary="@string/qs_show_auto_brightness_summary"
             android:defaultValue="true" />
 
+        </PreferenceCategory>
+
+        <PreferenceCategory
+            android:key="qs_styling"
+            android:title="@string/qs_styling">
+
         <com.corvus.support.preferences.SystemSettingSeekBarPreference
             android:key="qs_transparency"
             android:title="@string/qs_transparency_title"
@@ -45,5 +55,15 @@
             settings:interval="1"
             android:max="10"         
             android:min="1" />
+
+        <com.corvus.support.preferences.SystemSettingListPreference
+            android:key="qs_panel_style"
+            android:title="@string/qs_styles_title"
+            android:dialogTitle="@string/qs_styles_title"
+            android:entries="@array/qs_styles_entries"
+            android:entryValues="@array/qs_styles_values"
+            android:defaultValue="0" />
+
+        </PreferenceCategory>
 
 </PreferenceScreen>

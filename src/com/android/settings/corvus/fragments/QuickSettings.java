@@ -16,10 +16,21 @@
 
 package com.android.settings.corvus.fragments;
 
+import static android.os.UserHandle.USER_CURRENT;
+import static android.os.UserHandle.USER_SYSTEM;
+
 import android.content.ContentResolver;
+import android.content.Context;
+import android.database.ContentObserver;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.RemoteException;
+import android.os.ServiceManager;
+import android.os.UserHandle;
 import android.provider.Settings;
 import android.graphics.Color;
+import android.content.om.IOverlayManager;
 
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
@@ -34,14 +45,21 @@ import com.android.settingslib.search.SearchIndexable;
 import com.android.internal.util.corvus.CorvusUtils;
 
 import com.corvus.support.preferences.SystemSettingSeekBarPreference;
+import com.corvus.support.preferences.SystemSettingListPreference;
 
 @SearchIndexable
 public class QuickSettings extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
     private static final String QS_TRANSPARENCY = "qs_transparency";
+    private static final String QS_PANEL_STYLE  = "qs_panel_style";
 
+    private Handler mHandler;
+    private IOverlayManager mOverlayManager;
+    private IOverlayManager mOverlayService;
+    private SystemSettingListPreference mQsStyle;
     private SystemSettingSeekBarPreference mQsTransparency;
+    
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -54,6 +72,36 @@ public class QuickSettings extends SettingsPreferenceFragment
 
         mQsTransparency = (SystemSettingSeekBarPreference) findPreference(QS_TRANSPARENCY);
         mQsTransparency.setOnPreferenceChangeListener(this);
+
+        mOverlayService = IOverlayManager.Stub
+        .asInterface(ServiceManager.getService(Context.OVERLAY_SERVICE));
+
+        mQsStyle = (SystemSettingListPreference) findPreference(QS_PANEL_STYLE);
+        mCustomSettingsObserver.observe();
+        
+    }
+
+    private CustomSettingsObserver mCustomSettingsObserver = new CustomSettingsObserver(mHandler);
+    private class CustomSettingsObserver extends ContentObserver {
+
+        CustomSettingsObserver(Handler handler) {
+            super(handler);
+        }
+
+        void observe() {
+            Context mContext = getContext();
+            ContentResolver resolver = mContext.getContentResolver();
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.QS_PANEL_STYLE),
+                    false, this, UserHandle.USER_ALL);
+        }
+
+        @Override
+        public void onChange(boolean selfChange, Uri uri) {
+            if (uri.equals(Settings.System.getUriFor(Settings.System.QS_PANEL_STYLE))) {
+                updateQsStyle();
+            }
+        }
     }
 
     @Override
@@ -62,9 +110,58 @@ public class QuickSettings extends SettingsPreferenceFragment
         if (preference == mQsTransparency) {
             CorvusUtils.showSystemUiRestartDialog(getActivity());
             return true;
+        } else if (preference == mQsStyle) {
+            mCustomSettingsObserver.observe();
+            return true;
         }
         return false;
     }
+
+    private void updateQsStyle() {
+        ContentResolver resolver = getActivity().getContentResolver();
+
+        boolean qsStock = Settings.System.getIntForUser(getContext().getContentResolver(),
+                Settings.System.QS_PANEL_STYLE , 0, UserHandle.USER_CURRENT) == 0;
+        boolean qsRoundedRectangle = Settings.System.getIntForUser(getContext().getContentResolver(),
+                Settings.System.QS_PANEL_STYLE , 0, UserHandle.USER_CURRENT) == 1;
+
+        if (qsStock) {
+            setDefaultStyle(mOverlayService);
+        } else if (qsRoundedRectangle) {
+            setQsStyle(mOverlayService, "com.android.system.qs.roundedrectangle");
+        }
+    }
+
+    public static void setDefaultStyle(IOverlayManager overlayManager) {
+        for (int i = 0; i < QS_STYLES.length; i++) {
+            String qsStyles = QS_STYLES[i];
+            try {
+                overlayManager.setEnabled(qsStyles, false, USER_SYSTEM);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static void setQsStyle(IOverlayManager overlayManager, String overlayName) {
+        try {
+            for (int i = 0; i < QS_STYLES.length; i++) {
+                String qsStyles = QS_STYLES[i];
+                try {
+                    overlayManager.setEnabled(qsStyles, false, USER_SYSTEM);
+                } catch (RemoteException e) {
+                    e.printStackTrace();
+                }
+            }
+            overlayManager.setEnabled(overlayName, true, USER_SYSTEM);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static final String[] QS_STYLES = {
+        "com.android.system.qs.roundedrectangle"
+    };
 
     @Override
     public int getMetricsCategory() {

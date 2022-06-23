@@ -504,4 +504,14 @@
         <item>0</item>
         <item>1</item>
     </string-array>
+
+    <string-array name="qs_styles_entries" translatable="false">
+        <item>@string/default_string</item>
+        <item>@string/qs_rounded_rectangle</item>
+    </string-array>
+
+    <string-array name="qs_styles_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
 </resources>
