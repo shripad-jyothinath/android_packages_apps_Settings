@@ -124,11 +124,15 @@ public class QuickSettings extends SettingsPreferenceFragment
                 Settings.System.QS_PANEL_STYLE , 0, UserHandle.USER_CURRENT) == 0;
         boolean qsRoundedRectangle = Settings.System.getIntForUser(getContext().getContentResolver(),
                 Settings.System.QS_PANEL_STYLE , 0, UserHandle.USER_CURRENT) == 1;
+        boolean qsOutline = Settings.System.getIntForUser(getContext().getContentResolver(),
+                Settings.System.QS_PANEL_STYLE , 0, UserHandle.USER_CURRENT) == 2;
 
         if (qsStock) {
             setDefaultStyle(mOverlayService);
         } else if (qsRoundedRectangle) {
             setQsStyle(mOverlayService, "com.android.system.qs.roundedrectangle");
+        } else if (qsOutline) {
+            setQsStyle(mOverlayService, "com.android.system.qs.outline");
         }
     }
 
@@ -160,7 +164,8 @@ public class QuickSettings extends SettingsPreferenceFragment
     }
 
     public static final String[] QS_STYLES = {
-        "com.android.system.qs.roundedrectangle"
+        "com.android.system.qs.roundedrectangle",
+        "com.android.system.qs.outline"
     };
 
     @Override
