@@ -840,4 +840,7 @@
     <string name="qs_tile_vertical_layout_summary">Enable tile vertical layout</string>
     <string name="qs_tile_title_visibility_title">Hide titles</string>
     <string name="qs_tile_title_visibility_summary">Enable to hide QS tile titles</string>
+
+    <!-- Summary for list to control apps that ignore battery saving restrictions -->
+    <string name="high_power_apps_summary" translatable="false">Per-app battery optimization</string>
 </resources>
