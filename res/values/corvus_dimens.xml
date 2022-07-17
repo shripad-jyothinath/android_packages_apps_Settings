@@ -15,7 +15,7 @@
 -->
 
  <resources>
-	  <dimen name="app_bar_title_margin">24dp</dimen>
+    <dimen name="app_bar_title_margin">24dp</dimen>
     <dimen name="avatar_margin_start">10dp</dimen>
     <dimen name="avatar_length">40dp</dimen>
 
