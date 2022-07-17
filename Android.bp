@@ -81,6 +81,7 @@ android_library {
         "VendorSupport-preference",
         "glide",
         "faceunlock_framework",
+        "volley",
     ],
 
     libs: [
