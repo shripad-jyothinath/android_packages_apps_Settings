@@ -510,6 +510,7 @@
         <item>@string/qs_rounded_rectangle</item>
         <item>@string/qs_outline</item>
         <item>@string/qs_two_tone</item>
+        <item>@string/qs_color_pop</item>
     </string-array>
 
     <string-array name="qs_styles_values" translatable="false">
@@ -517,5 +518,6 @@
         <item>1</item>
         <item>2</item>
         <item>3</item>
+        <item>4</item>
     </string-array>
 </resources>

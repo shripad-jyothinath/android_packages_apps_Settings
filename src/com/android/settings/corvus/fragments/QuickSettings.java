@@ -128,6 +128,8 @@ public class QuickSettings extends SettingsPreferenceFragment
                 Settings.System.QS_PANEL_STYLE , 0, UserHandle.USER_CURRENT) == 2;
         boolean qsTwoTone = Settings.System.getIntForUser(getContext().getContentResolver(),
                 Settings.System.QS_PANEL_STYLE , 0, UserHandle.USER_CURRENT) == 3;
+        boolean qsColorPop = Settings.System.getIntForUser(getContext().getContentResolver(),
+                Settings.System.QS_PANEL_STYLE , 0, UserHandle.USER_CURRENT) == 4;
 
         if (qsStock) {
             setDefaultStyle(mOverlayService);
@@ -135,7 +137,7 @@ public class QuickSettings extends SettingsPreferenceFragment
             setQsStyle(mOverlayService, "com.android.system.qs.roundedrectangle");
         } else if (qsOutline) {
             setQsStyle(mOverlayService, "com.android.system.qs.outline");
-        } else if (qsTwoTone) {
+        } else if (qsTwoTone || qsColorPop) {
             setQsStyle(mOverlayService, "com.android.system.qs.twotoneaccent");
         }
     }

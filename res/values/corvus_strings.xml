@@ -737,6 +737,7 @@
     <string name="qs_rounded_rectangle">QS Rounded Rectangle</string>
     <string name="qs_outline">QS Outline Style</string>
     <string name="qs_two_tone">QS Two-Tone Accent</string>
+    <string name="qs_color_pop">QS Color Pop</string>
 
     <!-- Black theme -->
     <string name="system_black_theme_title">Use black theme</string>
