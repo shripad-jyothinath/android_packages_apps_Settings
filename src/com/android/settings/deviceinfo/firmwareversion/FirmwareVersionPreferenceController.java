@@ -18,7 +18,6 @@ package com.android.settings.deviceinfo.firmwareversion;
 
 import android.os.Build;
 import android.content.Context;
-import android.os.SystemProperties;
 import androidx.annotation.VisibleForTesting;
 
 import com.android.settings.R;
@@ -27,7 +26,7 @@ import com.android.settings.core.BasePreferenceController;
 public class FirmwareVersionPreferenceController extends BasePreferenceController {
 
     @VisibleForTesting
-    private static final String VOLTAGE_PLATFORM_RELEASE_OR_CODENAME = "ro.voltage.platform_release_or_codename";
+    private static final String ANDROID_VERSION = "12L";
 
     public FirmwareVersionPreferenceController(Context context, String key) {
         super(context, key);
@@ -40,7 +39,6 @@ public class FirmwareVersionPreferenceController extends BasePreferenceControlle
 
     @Override
     public CharSequence getSummary() {
-        return SystemProperties.get(VOLTAGE_PLATFORM_RELEASE_OR_CODENAME, 
-            Build.VERSION.RELEASE_OR_CODENAME);
+        return ANDROID_VERSION;
     }
 }
