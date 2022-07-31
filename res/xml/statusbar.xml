@@ -57,21 +57,31 @@
         android:key="network_icons_category"
         android:title="@string/network_icons_category_title" >
 
-     <com.corvus.support.preferences.SystemSettingListPreference
-       android:key="show_vowifi_icon"
-       android:title="@string/vowifi_icon_title"
-       android:entries="@array/vowifi_icon_entries"
-       android:entryValues="@array/vowifi_icon_values"
-       android:summary="%s"
-       android:defaultValue="2" />
+      <com.corvus.support.preferences.SystemSettingSeekBarPreference
+            android:key="volte_icon_style"
+            android:title="@string/volte_icon_title"
+            android:summary="@string/volte_icon_summary"
+            android:defaultValue="1"
+            android:max="24"
+            settings:min="0"
+            settings:units="" />
 
-    <com.corvus.support.preferences.SystemSettingSwitchPreference
-       android:key="show_volte_icon"
-       android:title="@string/show_volte_title"
-       android:summary="@string/show_volte_summary"
-       android:defaultValue="true" />
+      <com.corvus.support.preferences.SystemSettingSeekBarPreference
+            android:key="vowifi_icon_style"
+            android:title="@string/vowifi_icon_title"
+            android:summary="@string/vowifi_icon_summary"
+            android:defaultValue="1"
+            android:max="7"
+            settings:min="0"
+            settings:units="" />
 
-     <com.corvus.support.preferences.SystemSettingSwitchPreference
+      <com.corvus.support.preferences.SystemSettingSwitchPreference
+            android:key="volte_vowifi_override"
+            android:title="@string/volte_vowifi_override_title"
+            android:summary="@string/volte_vowifi_override_summary"
+            android:defaultValue="true" />
+
+      <com.corvus.support.preferences.SystemSettingSwitchPreference
             android:key="show_fourg_icon"
             android:title="@string/show_fourg_icon_title"
             android:summary="@string/show_fourg_icon_summary"
