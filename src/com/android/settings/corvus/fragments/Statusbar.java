@@ -32,6 +32,8 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.android.internal.util.corvus.CorvusUtils;
+
 import com.corvus.support.preferences.SecureSettingSwitchPreference;
 
 @SearchIndexable
@@ -83,6 +85,7 @@ public class Statusbar extends SettingsPreferenceFragment
             boolean enabled = (boolean) newValue;
             Settings.Secure.putInt(resolver,
                     COMBINED_STATUSBAR_ICONS, enabled ? 1 : 0);
+            CorvusUtils.showSystemUiRestartDialog(getActivity());
             return true;
         }
         return false;
