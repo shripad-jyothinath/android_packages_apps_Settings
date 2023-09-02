@@ -1113,6 +1113,7 @@ public class UserSettings extends SettingsPreferenceFragment
         return (int) mUserManager.getUsers()
                 .stream()
                 .filter(user -> !user.isGuest() && !user.isProfile())
+                .filter(user -> !user.isGuest() && !user.isProfile() && !user.isParallel())
                 .count();
     }
 
